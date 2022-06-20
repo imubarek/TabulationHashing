@@ -16,7 +16,7 @@ module staticTable #(
 
    logic [Dbits-1 : 0] static_table [Nloc-1 : 0];
    
-   initial $readmemh(initfile, mem, 0, Nloc-1); // Initialize memory contents from a provided initialization file
+   initial $readmemh(initfile, static_table, 0, Nloc-1); // Initialize memory contents from a provided initialization file
 
 
    assign dataOut1 = static_table[readAddr];                  // Memory read: read continuously, no clock involved
