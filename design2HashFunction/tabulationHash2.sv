@@ -22,9 +22,10 @@
 
 
 module tabulationHash2(
-    input wire [44:0] virtualPageNumber,
-    input wire hashID, 
-    output wire [31:0] hashOutput
+    input wire clk,
+    input reg [44:0] virtualPageNumber,
+    input reg hashID, 
+    output reg [31:0] hashOutput
     );
     
     wire [31:0] t1Output1; 
@@ -83,7 +84,9 @@ module tabulationHash2(
                            (hashID == 1'b1) ? t6Output2 :  
                            31'bx ; 
                            
-    assign hashOutput = t1OutputFinal ^ t2OutputFinal ^ t3OutputFinal ^ t4OutputFinal ^ t5OutputFinal ^ t6OutputFinal; 
+    always @(posedge clk) begin
+        hashOutput <= t1OutputFinal ^ t2OutputFinal ^ t3OutputFinal ^ t4OutputFinal ^ t5OutputFinal ^ t6OutputFinal;
+    end
      
     
 endmodule
