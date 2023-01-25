@@ -11,7 +11,7 @@
 9. Under "Installation Options" have "Install Cable Drivers" checked
 10. You can use the default options on the following screen for the location of the installed software
 11. Click "Install"
-12. To launch Vivado after installation, there should have been a desktop shortcut called "Vivado 2020.2" downloaded that you can open (not "Vivado HLS", this is something different). If you do not see a desktop shortcut to Vivado, you can navigate to the install location (usually C:\Xilinx\Vivado\2020.2), then go into bin, and double-click vivado.bat.
+12. To launch Vivado after installation, there should have been a desktop shortcut called "Vivado 2020.2" downloaded that you can open (not "Vivado HLS", this is something different). If you do not see a desktop shortcut to Vivado, you can navigate to the install location (usually C:\Xilinx\Vivado\2020.2), then go into bin, and double-click vivado.bat
 
 **Using Verilog in Vivado to Replicate Experiment**
 
@@ -31,10 +31,10 @@ Package: csg324
 11. Click "Add or create constraints"
 12. Click on "Add Files" and add "clk.xdc". Click on "Next" and "Finish"
 13. We have added all the necessary files needed to proceed with timing analysis. Under "Sources"->"Design Sources" double check "tabulationHash4.sv" is in bold. If it is not, right click on it and select "Set as Top"
-14. Under "Project Manager" -> "Synthesis" select "Run Synthesis". Click on "OK" to use the default options. Synthesis may take a few minutes to complete. 
-15. Once synthesis is complete you will be alerted of this. On the alert select "Run Implementation" then "OK". Running implementation may also take a few minutes. 
+14. Under "Project Manager" -> "Synthesis" select "Run Synthesis". Click on "OK" to use the default options. Synthesis may take a few minutes to complete 
+15. Once synthesis is complete you will be alerted of this. On the alert select "Run Implementation" then "OK". Running implementation may also take a few minutes
 16. Once implementation is complete you will be alerted of this. On the alert, select "View Reports". These reports will contain the timing analysis and resource usage of the Verilog design. Under "Route Design" you should find a "Timing Summary - Route Design" file. This file will should state the worst slack and total violation is -0.155ns. Since the design was synthesized using a clock with a period of 2ns, this means the minimum operational clock period of the Verilog design is 2ns + .155ns = 2.155ns which implies a maximum operational clock frequency of 464 MHz. Resource utlization can be found in the tabulationHash4_utilization_placed.rpt in reports
 
 **Acknowledgment**
 
-A special thanks to Dr. Montek Singh and his course materials for COMP 541 Digital Logic and Design, taught at the University of North Carolina at Chapel Hill, for much of the information concerning getting Vivado installed and a project setup. 
+A special thanks to Dr. Montek Singh and his course materials for COMP 541 Digital Logic and Design, taught at the University of North Carolina at Chapel Hill, for much of the information concerning getting Vivado installed and a project setup
